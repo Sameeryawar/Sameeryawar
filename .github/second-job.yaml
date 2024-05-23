@@ -1,0 +1,26 @@
+name: ASCII PROJECT
+
+on: push
+
+jobs:
+  ASCII_JOB:
+    runs on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Cowsay
+        run: sudo apt-get install cowsay -y
+
+      - name: Run Cowsay Command
+        run: cowsay -f dragon "Run for cover, I'm a dragon" >> dragon.txt
+
+      - name: Test file exist
+        run: grep -i "dragon" dragon.txt
+
+      - name: Read File
+        run: cat dragon.txt
+
+      - name: Checkout Repo File
+        run: ls -lart
+  
