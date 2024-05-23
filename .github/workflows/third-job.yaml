@@ -21,6 +21,7 @@ jobs:
         name: dragon-txt-file
         path: dragon.txt
   Job2:
+    needs: ARTIFACT_JOB 
     runs-on: ubuntu-latest
     steps:
         - name: Download Artifact
@@ -31,6 +32,7 @@ jobs:
         - name: Test file exist
           run: grep -i "dragon" dragon.txt
   Job3:
+    needs: Job2
     runs-on: ubuntu-latest
     steps:
   
