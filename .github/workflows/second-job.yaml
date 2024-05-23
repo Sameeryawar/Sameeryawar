@@ -23,3 +23,9 @@ jobs:
 
       - name: Checkout Repo File
         run: ls -lart
+
+      - name: script
+        run: |
+        
+           chmod +x
+           ./script.sh
