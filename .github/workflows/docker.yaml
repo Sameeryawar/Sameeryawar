@@ -1,0 +1,23 @@
+name: Matrix_Stragey
+
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+    Linux_JOB:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Docker Details
+              run: docker info
+            
+            - name: Run Images
+              run: docker run hello-world
+    Windows_Job:
+        runs-on: windows
+        steps:
+           - name: Docker Details
+             run: docker info
+
+           - name: Run Image
+             run: docker run hello-world
