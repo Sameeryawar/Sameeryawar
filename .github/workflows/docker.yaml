@@ -14,7 +14,7 @@ jobs:
             - name: Run Images
               run: docker run hello-world
     Windows_Job:
-        runs-on: windows
+        runs-on: windows-latest
         steps:
            - name: Docker Details
              run: docker info
