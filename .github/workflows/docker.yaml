@@ -8,7 +8,7 @@ jobs:
     Linux_JOB:
         strategy:
           matrix:
-            os: [ubuntu-lastest, windows-latest]
+            os: [ubuntu-latest, windows-latest]
             images: [hello-world, alpine]
         runs-on: ${{matrix.os}}
         steps:
