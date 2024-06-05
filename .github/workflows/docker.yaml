@@ -6,18 +6,14 @@ on:
 
 jobs:
     Linux_JOB:
-        runs-on: ubuntu-latest
+        strategy:
+          matrix:
+            os: [ubuntu-lastest, windows-latest]
+            images: [hello-world, alpine]
+        runs-on: ${{matrix.os}}
         steps:
             - name: Echo Docker Details
               run: docker info
             
             - name: Run Images
-              run: docker run hello-world
-    Windows_Job:
-        runs-on: windows-latest
-        steps:
-           - name: Docker Details
-             run: docker info
-
-           - name: Run Image
-             run: docker run hello-world
+              run: docker run ${{matrix.images}}
